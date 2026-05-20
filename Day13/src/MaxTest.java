@@ -10,9 +10,32 @@ public class MaxTest {
 
         return max;
     }
+    public static Integer testMaximum(Integer a, Integer b, Integer c) {
+        Integer max = a;
 
-    public static void main(String[] args) {
+        if (b.compareTo(max) > 0)
+            max = b;
 
-        System.out.println(testMaximum("Peach", "Apple", "Banana"));
+        if (c.compareTo(max) > 0)
+            max = c;
+
+        return max;
     }
+    public static float testMaximum(float a, float b, float c) {
+        float max = a;
+
+        if (b > max)
+            max = b;
+
+        if (c > max)
+            max = c;
+
+        return max;
+    }
+
+
+
+
+
+
 }
