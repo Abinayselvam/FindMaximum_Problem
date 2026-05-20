@@ -1,34 +1,37 @@
+import java.util.Arrays;
+
 public class MaxTest<T extends Comparable<T>> {
 
-        T a, b, c;
+    T[] values;
 
-        public MaxTest(T a, T b, T c) {
-            this.a = a;
-            this.b = b;
-            this.c = c;
+    // Constructor
+    public MaxTest(T... values) {
+        this.values = values;
+    }
+
+    // Instance method
+    public T testMaximum() {
+        return testMaximum(values);
+    }
+
+    // Generic static method
+    public static <T extends Comparable<T>> T testMaximum(T... values) {
+
+        if (values.length == 0) {
+            throw new IllegalArgumentException("No values provided");
         }
 
-        public T testMaximum() {
-            return MaxTest.testMaximum(a, b, c);
-        }
+        Arrays.sort(values);
 
-        public static <T extends Comparable<T>> T testMaximum(T a, T b, T c) {
+        T max = values[values.length - 1];
 
-            T max = a;
+        printMax(max);
 
-            if (b.compareTo(max) > 0)
-                max = b;
+        return max;
+    }
 
-            if (c.compareTo(max) > 0)
-                max = c;
-
-            printMax(max);
-
-            return max;
-        }
-
-        public static <T> void printMax(T max) {
-            System.out.println("Maximum value is: " + max);
-        }
-
+    // Print method
+    public static <T> void printMax(T max) {
+        System.out.println("Maximum value is: " + max);
+    }
 }
