@@ -1,6 +1,8 @@
 public class MaxTest {
-    public static String testMaximum(String a, String b, String c) {
-        String max = a;
+   //UC4 Accept all data types
+    public static <T extends Comparable<T>> T testMaximum(T a, T b, T c) {
+
+        T max = a;
 
         if (b.compareTo(max) > 0)
             max = b;
@@ -10,32 +12,4 @@ public class MaxTest {
 
         return max;
     }
-    public static Integer testMaximum(Integer a, Integer b, Integer c) {
-        Integer max = a;
-
-        if (b.compareTo(max) > 0)
-            max = b;
-
-        if (c.compareTo(max) > 0)
-            max = c;
-
-        return max;
-    }
-    public static float testMaximum(float a, float b, float c) {
-        float max = a;
-
-        if (b > max)
-            max = b;
-
-        if (c > max)
-            max = c;
-
-        return max;
-    }
-
-
-
-
-
-
 }
